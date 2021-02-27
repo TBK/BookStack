@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="7"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    cacheDirectory="./.github/psalm/cache/"
+    errorBaseline=".github/psalm/psalm.baseline.xml"
+>
+    <projectFiles>
+        <directory name="app"/>
+        <directory name="bootstrap"/>
+        <directory name="database"/>
+        <directory name="public"/>
+        <directory name="resources"/>
+        <directory name="storage"/>
+        <directory name="themes"/>
+        <ignoreFiles>
+            <directory name="database/migrations" />
+            <directory name="tests"/>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+<plugins>
+   <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
+   <!-- <pluginClass class="Orklah\PsalmInsaneComparison\Plugin"/> -->
+<!--
+    <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    <pluginClass class="Lctrs\PsalmPsrContainerPlugin\Plugin"/>
+-->
+</plugins>
+</psalm>
